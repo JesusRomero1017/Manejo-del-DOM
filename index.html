@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Tareas</title>
+</head>
+<body>
+    <!-- Título principal -->
+    <h1>Lista de Tareas</h1>
+
+    <!-- Contador de tareas (inicia en 0) -->
+    <p>Total de tareas: <span id="contador">0</span></p>
+
+    <!-- Lista donde se agregarán las tareas -->
+    <ul id="lista-tareas"></ul>
+
+    <!-- Botón para agregar nuevas tareas -->
+    <button onclick="agregarTarea()">Agregar Tarea</button>
+
+    <script>
+        // Variable global para llevar el conteo de tareas
+        let contador = 0;
+
+        // Función que se ejecuta cada vez que se presiona el botón
+        function agregarTarea() {
+            // Obtiene el contenedor de la lista por su ID
+            const lista = document.getElementById("lista-tareas");
+
+            // Crea un nuevo elemento <li>
+            const nuevaTarea = document.createElement("li");
+
+            // Incrementa el contador en 1
+            contador++;
+
+            // Asigna texto a la nueva tarea, por ejemplo: "Tarea 1", "Tarea 2", etc.
+            nuevaTarea.textContent = "Tarea " + contador;
+
+            // Agrega el nuevo <li> a la lista
+            lista.appendChild(nuevaTarea);
+
+            // Obtiene el <span> del contador
+            const spanContador = document.getElementById("contador");
+
+            // Actualiza el contenido del <span> con el nuevo valor del contador
+            spanContador.textContent = contador;
+        }
+    </script>
+</body>
+</html>
